@@ -1,17 +1,18 @@
-import React from 'react'
+import React from "react";
 
 export default function Header() {
   return (
-    <div>
-        <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
-            <h1 className="text-2xl font-bold">My Website</h1>
-            <nav className="space-x-4">
-            <a href="/" className="hover:text-gray-400">Home</a>
-            <a href="/about" className="hover:text-gray-400">About</a>
-            <a href="/contact" className="hover:text-gray-400">Contact</a>
-            </nav>
-        </header>
-      
-    </div>
-  )
+ 
+      <header className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b dark:border-gray-700">
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="flex items-center space-x-4">
+        My Logo 
+        </div>
+        <div>
+            <a href="/">Home</a>
+        </div>
+      </nav>
+    </header>
+  
+  );
 }
