@@ -1,24 +1,19 @@
-'use client';
+"use client"
 
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from "next-themes"
+import { Sun, Moon } from "lucide-react"
+import { Button } from "../ui/button"
 
-export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
+export const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme()
 
   return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      {theme === 'light' ? (
-        <FaMoon className="text-gray-800" />
-      ) : (
-        <FaSun className="text-yellow-400" />
-      )}
-    </button>
-  );
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+    >
+      {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+    </Button>
+  )
 }

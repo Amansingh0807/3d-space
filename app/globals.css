@@ -125,3 +125,18 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent;
+  }
+  
+  .backdrop-blur-lg {
+    backdrop-filter: blur(24px);
+  }
+}
+html,
+body {
+  background-color: #000;
+  color: #fff;
+}
+

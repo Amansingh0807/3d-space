@@ -1,21 +1,26 @@
-import "./globals.css";
-import { ThemeProvider } from "next-themes";
+import type { Metadata } from "next"
+import "./globals.css"
+import { Inter } from "next/font/google"
+// import {ThemeToggle} from "@/components/layout/ThemeToggle"
+// import { Navbar } from "@/components/layout/Navbar"
+// import {Footer} from "@/components/layout/Footer"
 
-export const metadata = {
-  title: "Aman Singh Portfolio",
-  description: "Showcasing my work and skills",
-};
+const inter = Inter({ subsets: ["latin"] })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const metadata: Metadata = {
+  title: "Aman Singh | Portfolio",
+  description: "3D Portfolio site built with Next.js and Three.js",
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+      <body className={inter.className}>
+        {/* <ThemeToggle/> */}
+        {/* <Navbar /> */}
+        {children}
+        {/* <Footer /> */}
       </body>
     </html>
-  );
+  )
 }

@@ -1,7 +1,5 @@
-export default function Footer() {
-  return (
-    <footer className="bg-gray-100 dark:bg-[#0d0d0d] text-center py-6 text-sm text-gray-600 dark:text-gray-400">
-      © {new Date().getFullYear()} Aman Singh. All rights reserved.
-    </footer>
-  );
-}
+export const Footer = () => (
+  <footer className="text-center py-6 border-t border-gray-700 bg-black/50 mt-10">
+    <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Aman Singh. All rights reserved.</p>
+  </footer>
+)
