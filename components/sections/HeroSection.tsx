@@ -26,11 +26,13 @@ const BigSphere = () => (
   <mesh position={[0, 1, 0]}>
     <sphereGeometry args={[1.5, 64, 64]} />
     <GradientMaterial />
-    <Html position={[0, -2.2, 0]} center>
-       <Link href="/main"> {/* Replace '/your-route' with your desired route */}
-        <Button className="bg-white text-black hover:bg-gray-200">START</Button>
-      </Link>
-    </Html>
+<Html position={[0, -2.2, 0]} center>
+  <Link href="/main"> {/* Replace '/main' with your desired route */}
+    <button className="px-6 py-3 text-white font-bold rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-purple-500 hover:via-pink-500 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_5px_rgba(255,105,180,0.8)] no-cursor">
+     Let's Gooo
+    </button>
+  </Link>
+</Html>
   </mesh>
 )
 

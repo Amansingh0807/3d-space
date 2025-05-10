@@ -140,3 +140,37 @@ body {
   color: #fff;
 }
 
+body {
+  cursor: none;
+}
+
+/* Outer glowing circle */
+.cursor-outer {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #e100ff;
+  border-radius: 50%;
+  background: rgba(0, 255, 225, 0.05);
+  box-shadow: 0 0 10px #e100ff, 0 0 40px #e100ff;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+
+/* Inner dot */
+.cursor-inner {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #e100ff;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 10000;
+}
+
+
+.no-cursor {
+  cursor: none;
+}
