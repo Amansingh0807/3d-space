@@ -2,18 +2,16 @@
 
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, Stars, Html } from "@react-three/drei"
-import { Button } from "@/components/ui/button"
 import * as THREE from "three"
 import React, { useRef, useMemo, useState } from "react"
 import Link from "next/link"
-
 
 const GradientMaterial = () => {
   const materialRef = useRef<any>(null)
   const [time, setTime] = useState(0)
 
   useFrame((_, delta) => {
-    setTime((prev) => prev + delta * 0.2) // Slow down the time progression
+    setTime((prev) => prev + delta * 0.2)
     if (materialRef.current) {
       materialRef.current.color.setHSL((Math.sin(time) + 1) / 2, 0.8, 0.5)
     }
@@ -21,22 +19,32 @@ const GradientMaterial = () => {
 
   return <meshStandardMaterial ref={materialRef} />
 }
-// Main large sphere with a button below
-const BigSphere = () => (
-  <mesh position={[0, 1, 0]}>
-    <sphereGeometry args={[1.5, 64, 64]} />
-    <GradientMaterial />
-<Html position={[0, -2.2, 0]} center>
-  <Link href="/main"> {/* Replace '/main' with your desired route */}
-    <button className="px-6 py-1 text-white font-bold rounded-lg bg-gradient-to-r from-green-300 via-purple-400 to-pink-500 hover:from-purple-500 hover:via-pink-500 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_5px_rgba(255,105,180,0.8)] no-cursor whitespace-nowrap">
-      Let's Gooo
-    </button>
-  </Link>
-</Html>
-  </mesh>
-)
 
-// Small spheres generator
+// Main large sphere with a button below, now revolving
+const BigSphere = () => {
+  const meshRef = useRef<THREE.Mesh>(null)
+
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.01 // Revolve the sphere
+    }
+  })
+
+  return (
+    <mesh ref={meshRef} position={[0, 1, 0]}>
+      <sphereGeometry args={[1.5, 64, 64]} />
+      <GradientMaterial />
+      <Html position={[0, -2.2, 0]} center>
+        <Link href="/main">
+          <button className="px-6 py-1 text-black font-bold text-2xl rounded-lg bg-gradient-to-r from-blue-300 via-red-400 to-pink-500 hover:from-purple-500 hover:via-pink-500 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_5px_rgba(255,105,180,0.8)] no-cursor whitespace-nowrap">
+            Explore➡️
+          </button>
+        </Link>
+      </Html>
+    </mesh>
+  )
+}
+
 const SmallSpheres = () => {
   const spheres = useMemo(() => {
     const positions: [number, number, number][] = []
