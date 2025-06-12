@@ -6,7 +6,7 @@ import CustomCursor from "@/components/CustomCursor"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Aman Singh | Portfolio",
+  title: "3D Space",
   description: "3D Portfolio site built with Next.js and Three.js",
 }
 
