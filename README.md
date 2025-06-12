@@ -8,6 +8,10 @@ The UI replicates a minimalistic cosmic scene. When users move their cursor, the
 
 This project showcases animation, spatial design, and cursor interactivity — all rendered smoothly through **React Three Fiber**, **@react-three/drei**, and **Framer Motion**.
 
+## 🔗 Live Demo
+
+👉 [Click here to view the live project](https://3d-space-six.vercel.app/)
+
 ## 📸 Preview
 
 Here's a snapshot of the 3D Space UI in action:
