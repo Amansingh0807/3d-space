@@ -34,13 +34,6 @@ const BigSphere = () => {
     <mesh ref={meshRef} position={[0, 1, 0]}>
       <sphereGeometry args={[1.5, 64, 64]} />
       <GradientMaterial />
-      <Html position={[0, -2.2, 0]} center>
-        <Link href="/main">
-          <button className="px-6 py-1 text-black font-bold text-2xl rounded-lg bg-gradient-to-r from-blue-300 via-red-400 to-pink-500 hover:from-purple-500 hover:via-pink-500 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_5px_rgba(255,105,180,0.8)] no-cursor whitespace-nowrap">
-            Explore➡️
-          </button>
-        </Link>
-      </Html>
     </mesh>
   )
 }
