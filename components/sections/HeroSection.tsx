@@ -1,13 +1,12 @@
 "use client"
 
 import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls, Stars, Html } from "@react-three/drei"
+import { OrbitControls, Stars,} from "@react-three/drei"
 import * as THREE from "three"
 import React, { useRef, useMemo, useState } from "react"
-import Link from "next/link"
 
 const GradientMaterial = () => {
-  const materialRef = useRef<any>(null)
+  const materialRef = useRef<THREE.MeshStandardMaterial>(null)
   const [time, setTime] = useState(0)
 
   useFrame((_, delta) => {
